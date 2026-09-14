@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Ambient Music Generator</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app-shell about-shell">
+    <header>
+      <div class="heading-row"><h1>About</h1><a href="./index.html">プレーヤーへ</a></div>
+      <p>Ambient Music Generatorは、景色や時間帯に合わせて音楽がゆっくり変わる、アンビエントのための小さなプレーヤーです。</p>
+      <p>録音された楽器の音を、音階や和声、余白を考慮しながら組み合わせます。ドローンや環境音は任意の素材です。楽器だけの静かな編成でも楽しめます。</p>
+    </header>
+
+    <section aria-labelledby="usage-title">
+      <h2 id="usage-title">音源の利用条件</h2>
+      <p>音源のライセンスは素材ごとに異なります。下記の条件は、アプリ全体を一括してライセンスするものではありません。</p>
+      <p><strong>Rhodesの録音を含むアプリやソフト音源の商用配布には、Jeffrey Learman氏の別途許諾が必要です。</strong>録音自体の利用・再配布はCC BY-NC 4.0に従い、作者表示と非商用の条件を守ってください。一方、この楽器を使って制作した楽曲の商用利用は、作者が認めています。</p>
+      <p><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> · <a href="./assets/jRhodes-LICENSE.txt">Rhodes作者の利用条件（原文）</a></p>
+    </section>
+
+    <section aria-labelledby="instruments-title">
+      <h2 id="instruments-title">楽器の録音</h2>
+      <dl class="credit-list">
+        <div><dt>ピアノ・ヴァイオリン・フルート・ハープ</dt><dd>Versilian Studios / <a href="https://github.com/sgossner/VSCO-2-CE/tree/440300901dfe9275fd84e0b7763af1f8443ae62e">VSCO 2 Community Edition</a><br>CC0 1.0</dd></div>
+        <div><dt>カリンバ</dt><dd><a href="https://freepats.zenvoid.org/Ethnic/kalimba.html">FreePats Kalimba</a>（2019-07-23版）<br>Xavimart (Javier), Gonzalo, Roberto · CC0 1.0</dd></div>
+        <div><dt>シンギングボウル</dt><dd>s-light / <a href="https://freesound.org/people/s-light/sounds/411486/">Freesound #411486</a><br>CC0 1.0 · HQ MP3プレビューから加工</dd></div>
+        <div><dt>エレクトリックピアノ</dt><dd>Jeffrey Learman / <a href="https://github.com/sfzinstruments/jlearman.jRhodes3d/tree/aea5b8d3e11e2f7102593789a4e0a0e41b30271a">jRhodes3d</a>（実機Rhodesの録音）<br>サンプルはCC BY-NC 4.0。商用配布には別途許諾が必要です。</dd></div>
+      </dl>
+      <p>録音には、先頭・末尾の無音短縮、ピーク音量の調整、末尾の短いフェード、16bit FLACへの変換を施しています。カリンバは元音源の調律値を反映しています。ボウルのMP3をFLACに変換しても、元の圧縮で失われた情報は復元されません。</p>
+      <p>サイン・プラック、ドローン、霧のパッド、シンセベル、テープ・ノイズはアプリ内で合成する音です。</p>
+    </section>
+
+    <section aria-labelledby="environment-title">
+      <h2 id="environment-title">環境音</h2>
+      <p>以下はCC0 1.0の録音です。雨・風・鳥・小川・暖炉は、<a href="https://github.com/twtrubiks/moonseal/tree/main/public/audio">moonsealの音声素材</a>からループ処理済みのファイルを使用しています。</p>
+      <dl class="credit-list">
+        <div><dt>海</dt><dd>Rmutt · Freesound #156598 · CC0 1.0</dd></div>
+        <div><dt>雨</dt><dd>Silencyo · Freesound #81818 · CC0 1.0</dd></div>
+        <div><dt>風</dt><dd>Internet Archive · GOLD_TAPE_55_56 / G55-02 Chill Wind · CC0 1.0</dd></div>
+        <div><dt>鳥</dt><dd>SamsterBirdies · Freesound #578523 · CC0 1.0</dd></div>
+        <div><dt>小川</dt><dd>Internet Archive · GOLD_TAPE_53_54 / G53-19a Brook or Creek · CC0 1.0</dd></div>
+        <div><dt>暖炉</dt><dd>Internet Archive · Red Library Fire / R30-09 · CC0 1.0</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="records-title">
+      <h2 id="records-title">出典と加工の記録</h2>
+      <p>音源の導入経緯と加工内容は<a href="./assets/LICENSES.md">音源クレジットの記録</a>に、楽器録音の取得元・音程・ファイルの照合情報は<a href="./assets/acoustic/manifest.json">音源マニフェスト</a>にまとめています。</p>
+      <p>メイン画像はアプリが描く抽象画です。景色が変わるとゆっくり重なり合い、端末で動きを減らす設定を有効にしている場合はアニメーションを省きます。</p>
+    </section>
+    <footer class="site-footer">Ambient Music Generator · 音源クレジット更新日：2026年9月14日</footer>
+  </main>
+</body>
+</html>

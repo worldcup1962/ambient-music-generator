@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambient Music Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="heading-row">
+          <h1>Ambient Music Generator</h1>
+          <div class="status"><span id="status-dot"></span><span id="status-text">待機中</span></div>
+        </div>
+      </header>
+
+      <section class="scene" aria-label="音の風景">
+        <canvas id="art-canvas" aria-hidden="true"></canvas><div class="mist mist-one"></div><div class="mist mist-two"></div><div class="field field-one"></div><div class="field field-two"></div>
+        <p id="now-playing">音が始まるのを待っています</p>
+      </section>
+
+      <section class="transport">
+        <button id="play-button" class="play-button" aria-label="再生する"><span class="play-icon"></span><span id="play-label">はじめる</span></button>
+      </section>
+
+      <section class="controls" aria-label="生成設定">
+        <div class="control-group select-group">
+          <label for="root">調性</label>
+          <select id="root">
+            <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+            <option value="F">F</option><option value="G" selected>G</option><option value="A">A</option>
+          </select>
+          <small class="control-help">音楽全体の基準となる音</small>
+        </div>
+        <div class="control-group select-group">
+          <label for="mode">モード</label>
+          <select id="mode"><option value="lydian" selected>Lydian</option><option value="dorian">Dorian</option><option value="pentatonic">Pentatonic</option><option value="phrygian">Phrygian</option><option value="aeolian">Aeolian</option></select>
+          <small class="control-help">使う音の並びと雰囲気</small>
+        </div>
+        <div class="control-group select-group">
+          <label for="scene-style">景色</label>
+          <select id="scene-style" aria-describedby="scene-description"></select>
+          <small class="control-help">楽器・調性・密度をまとめて切替</small>
+        </div>
+        <div class="control-group range-group">
+          <div><label for="pace">密度</label><output id="pace-output">静寂</output></div>
+          <input id="pace" type="range" min="1" max="3" value="1" step="1" />
+          <small class="control-help">音が現れる頻度</small>
+        </div>
+        <div class="control-group range-group">
+          <div><label for="volume">音量</label><output id="volume-output">100%</output></div>
+          <input id="volume" type="range" min="0" max="100" value="100" step="1" />
+        </div>
+        <div class="control-group random-group">
+          <label class="random-toggle" for="auto-random">
+            <span><b>自動ランダム</b><small>再生中に設定をゆっくり変化</small></span>
+            <input id="auto-random" type="checkbox" checked />
+            <span class="toggle-track" aria-hidden="true"></span>
+          </label>
+        </div>
+      </section>
+
+      <div class="control-group select-group time-control">
+        <label for="time-style">時間帯</label>
+        <select id="time-style" aria-describedby="time-description">
+          <option value="auto" selected>自動 · 現在の時刻</option>
+          <option value="early">早朝 · 5〜8時</option><option value="morning">朝 · 8〜12時</option>
+          <option value="day">昼 · 12〜17時</option><option value="evening">夕方 · 17〜21時</option>
+          <option value="night">夜 · 21〜24時</option><option value="midnight">深夜 · 0〜5時</option>
+          <option value="off">時間変化なし</option>
+        </select>
+        <small id="time-description" class="control-help" aria-live="polite"></small>
+      </div>
+      <p id="scene-description" class="control-help" aria-live="polite"></p>
+      <section class="layers" aria-label="音のレイヤー">
+        <div class="layer-heading"><h2>音のレイヤー</h2></div>
+        <div class="layer-panels">
+          <section class="layer-section"><h3>楽器</h3><div class="layer-grid">
+            <label class="layer-card"><input id="piano" type="checkbox" checked /><span class="check"></span><span><b>ピアノ</b><small>まばらな響き</small></span></label>
+            <label class="layer-card"><input id="strings" type="checkbox" checked /><span class="check"></span><span><b>弦楽器</b><small>柔らかな持続音</small></span></label>
+            <label class="layer-card"><input id="flute" type="checkbox" checked /><span class="check"></span><span><b>フルート</b><small>風のような旋律</small></span></label>
+            <label class="layer-card"><input id="bowl" type="checkbox" /><span class="check"></span><span><b>シンギングボウル</b><small>低い倍音の輪</small></span></label>
+            <label class="layer-card"><input id="harp" type="checkbox" /><span class="check"></span><span><b>ハープ</b><small>柔らかな分散和音</small></span></label>
+            <label class="layer-card"><input id="pluck" type="checkbox" /><span class="check"></span><span><b>サイン・プラック</b><small>丸い電子音と余韻</small></span></label>
+            <label class="layer-card"><input id="epiano" type="checkbox" /><span class="check"></span><span><b>エレクトリックピアノ</b><small>実機Rhodesの録音</small></span></label>
+            <label class="layer-card"><input id="kalimba" type="checkbox" /><span class="check"></span><span><b>カリンバ</b><small>指で弾く実録音</small></span></label>
+          </div></section>
+          <section class="layer-section"><h3>環境音</h3><div class="layer-grid">
+            <label class="layer-card"><input id="rain" type="checkbox" checked /><span class="check"></span><span><b>雨</b><small>細かな水の気配</small></span></label>
+            <label class="layer-card"><input id="wind" type="checkbox" checked /><span class="check"></span><span><b>風</b><small>遠くの空気</small></span></label>
+            <label class="layer-card"><input id="ocean" type="checkbox" /><span class="check"></span><span><b>海</b><small>緩やかな波</small></span></label>
+            <label class="layer-card"><input id="stream" type="checkbox" /><span class="check"></span><span><b>小川</b><small>流れる水の響き</small></span></label>
+            <label class="layer-card"><input id="birds" type="checkbox" /><span class="check"></span><span><b>鳥</b><small>夜明けの気配</small></span></label>
+            <label class="layer-card"><input id="fireplace" type="checkbox" /><span class="check"></span><span><b>暖炉</b><small>低い火のゆらぎ</small></span></label>
+          </div></section>
+          <section class="layer-section texture-panel"><h3>テクスチャ</h3><div class="layer-grid">
+            <label class="layer-card"><input id="drone" type="checkbox" checked /><span class="check"></span><span><b>ドローン</b><small>深く揺れる基音</small></span></label>
+            <label class="layer-card"><input id="shimmer" type="checkbox" checked /><span class="check"></span><span><b>シンセベル</b><small>遠いきらめき</small></span></label>
+            <label class="layer-card"><input id="haze" type="checkbox" checked /><span class="check"></span><span><b>霧のパッド</b><small>空間を満たす息</small></span></label>
+            <label class="layer-card"><input id="tape" type="checkbox" /><span class="check"></span><span><b>テープ・ノイズ</b><small>温かな揺らぎ</small></span></label>
+          </div></section>
+        </div>
+      </section>
+      <footer class="site-footer"><a href="./about.html" target="_blank" rel="noopener">About</a></footer>
+    <p id="audio-notice" class="control-help" role="status"></p>
+    </main>
+    <script src="./acoustic-bank.js"></script>
+    <script src="./arrangement.js"></script>
+    <script src="./music-theory.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

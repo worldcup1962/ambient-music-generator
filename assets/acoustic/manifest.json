@@ -1,0 +1,647 @@
+{
+  "piano": [
+    {
+      "name": "piano_48_ac86e1",
+      "midi": 48,
+      "url": "./assets/acoustic/piano_48_ac86e1.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C3_pp_RR1.wav",
+      "sourceSha256": "2fbe80d44b96c24980762eb805594cff6b84a5b4ed06ddfed70a8f8c692b856f",
+      "sha256": "3eb38816d29ecb90f65aedb3ad42a4ab16b657e6876ee46080192f69746a8304",
+      "duration": 7.074,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_48_5da79b",
+      "midi": 48,
+      "url": "./assets/acoustic/piano_48_5da79b.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C3_pp_RR2.wav",
+      "sourceSha256": "d5622ea06320325520ad254907a8076fa6c9b2b21343da49279086a96e359297",
+      "sha256": "81f14533faea22235b8d0931eee946db7cf598b29491fcac60134967f272a7fc",
+      "duration": 11.189,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_55_1fb9d5",
+      "midi": 55,
+      "url": "./assets/acoustic/piano_55_1fb9d5.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G3_pp_RR1.wav",
+      "sourceSha256": "328f35968d8c52f854baae364529e41d4b1eeffc3c42de6fefe506617ddb4e88",
+      "sha256": "61ef776eb258fd88e15830451d06aa753ee1d6c9cc5d7401e6e2c25962057639",
+      "duration": 10.205,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_55_ac7bcb",
+      "midi": 55,
+      "url": "./assets/acoustic/piano_55_ac7bcb.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G3_pp_RR2.wav",
+      "sourceSha256": "b17c2dd26a3dcb393c5d34939eee0d78058e231f7d795271fc1719e257e7bd11",
+      "sha256": "d2f68b3002a2abfc8f720ecd1f21aaa5bc4e5701d79cc64893a3bc58dafa29ac",
+      "duration": 13.782,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_60_13697a",
+      "midi": 60,
+      "url": "./assets/acoustic/piano_60_13697a.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C4_pp_RR1.wav",
+      "sourceSha256": "0354bf405b644eb16b0d1223e304de93b4abef4e2191c552665563784d40f1ea",
+      "sha256": "c8d0ce2a0e0d2fd47492cd97007b574c5755eaf4526c0b33146a731c32175dac",
+      "duration": 11.015,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_60_3b98a1",
+      "midi": 60,
+      "url": "./assets/acoustic/piano_60_3b98a1.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C4_pp_RR2.wav",
+      "sourceSha256": "4e9081f0a212f6bd0183b18e0136e191adadc616577c596075a0d0050d5b2b7f",
+      "sha256": "929892a72d722dd8532b8762cdae432befa8d8efe8b14c96fc9567149c5cb91f",
+      "duration": 6.637,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_67_0cb2b3",
+      "midi": 67,
+      "url": "./assets/acoustic/piano_67_0cb2b3.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G4_pp_RR1.wav",
+      "sourceSha256": "23c25a7d2757a0aaca9292b6e9a9197223fd34a946dc4fa19883fda1f7bed9a2",
+      "sha256": "25b95d8a938b6d69a840ceb87280cc8b7e554830bdc8f3e063f6107f962ef03e",
+      "duration": 10.406,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_67_fbe5f2",
+      "midi": 67,
+      "url": "./assets/acoustic/piano_67_fbe5f2.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G4_pp_RR2.wav",
+      "sourceSha256": "cadcc18b12d3199a4362a7ada635402c3d67359538ca39640433c32c02f67886",
+      "sha256": "ebc529bec54c44312704907f66d24b3f8e3c5167680dd905b370de13ddb821af",
+      "duration": 9.497,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_72_fc36dd",
+      "midi": 72,
+      "url": "./assets/acoustic/piano_72_fc36dd.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C5_pp_RR1.wav",
+      "sourceSha256": "e0d5353f67afe55e4d6d49253651f2a8aa0c456603f538175e103769e1e1e73c",
+      "sha256": "9c8150fb683069c56725ce8b5e94be1c91fb076a20b5a8ed5841a0989ac5b87b",
+      "duration": 8.893,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_72_9607b4",
+      "midi": 72,
+      "url": "./assets/acoustic/piano_72_9607b4.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C5_pp_RR2.wav",
+      "sourceSha256": "c5bcafbc6b285eebb604f91e279796b1e105ebc989319f973d40a76c9c726da1",
+      "sha256": "e9fd037bf29d7062ca3b471868b2a42aa5690ecab07f0c6bed62f09fe08eb57f",
+      "duration": 9.498,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_79_ab727b",
+      "midi": 79,
+      "url": "./assets/acoustic/piano_79_ab727b.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G5_pp_RR1.wav",
+      "sourceSha256": "6006fc831f64d3f459825d58d5a51474ba77d59a009bd8282788abb410f7c174",
+      "sha256": "2ac623ffb21be7459c6d25a606500977f358a24ff8f3a610198b18b3ea525fab",
+      "duration": 8.656,
+      "trimStart": 0.0
+    },
+    {
+      "name": "piano_79_ae2707",
+      "midi": 79,
+      "url": "./assets/acoustic/piano_79_ae2707.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G5_pp_RR2.wav",
+      "sourceSha256": "2ccfdbcec1bb88bd3db53aac7f90d46fc734a8b5499f1ad969fa4dfd06611841",
+      "sha256": "bd79a6c8c67413ab00d5122afc3612da5baf4729da65a05d20734ad0a834f242",
+      "duration": 6.671,
+      "trimStart": 0.0
+    }
+  ],
+  "strings": [
+    {
+      "name": "strings_55_dfbd1b",
+      "midi": 55,
+      "url": "./assets/acoustic/strings_55_dfbd1b.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G3_p.wav",
+      "sourceSha256": "c52d8ef3e2882984c09da1b7c7ef40b82e997bc78cfdd380fe167bbcb94b03de",
+      "sha256": "d55539f2b406e2c57e5d6e7cfd27f89a681f75aa97299e778ac78a079d2303a4",
+      "duration": 15.809,
+      "trimStart": 0.0
+    },
+    {
+      "name": "strings_60_534967",
+      "midi": 60,
+      "url": "./assets/acoustic/strings_60_534967.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C4_p.wav",
+      "sourceSha256": "592ebf4404ccafc7164c13cc543911ba9a2fe5f5e70dbb200807e2ae37b25035",
+      "sha256": "8b3e0013b98c4c80637d78b6f4f36be828b74711c0548f88ea327d41c02579d6",
+      "duration": 17.554,
+      "trimStart": 0.0
+    },
+    {
+      "name": "strings_67_f64edb",
+      "midi": 67,
+      "url": "./assets/acoustic/strings_67_f64edb.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G4_p.wav",
+      "sourceSha256": "ad1ba8442a6b40919093c9c831a8171c7030f7e651fbe075ab87764665deef88",
+      "sha256": "2dc4d08d502c2982f55777bb636671e36b946dce31ed02d60fee441fe35fae85",
+      "duration": 14.705,
+      "trimStart": 0.0
+    },
+    {
+      "name": "strings_69_e23347",
+      "midi": 69,
+      "url": "./assets/acoustic/strings_69_e23347.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_A4_p.wav",
+      "sourceSha256": "0d05607b46b78690893006d5aa7923ac304c7fb497df1e96536dc88ac5ac487f",
+      "sha256": "ea609b3eb51d387b146491c03b5df0637917336b6a069fd266948b3959e9c0a0",
+      "duration": 14.808,
+      "trimStart": 0.0
+    },
+    {
+      "name": "strings_72_bff586",
+      "midi": 72,
+      "url": "./assets/acoustic/strings_72_bff586.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C5_p.wav",
+      "sourceSha256": "77a2133b5f97e1ec0edb759c0c552fc3efa7caf4ce1e0a4aa22625cf4c9da130",
+      "sha256": "5b9a4656395e36dc1bd213e598455ff052c21389ce68e35b6f646c78a0c3bef4",
+      "duration": 14.165,
+      "trimStart": 0.0
+    },
+    {
+      "name": "strings_76_75a2ca",
+      "midi": 76,
+      "url": "./assets/acoustic/strings_76_75a2ca.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_E5_p.wav",
+      "sourceSha256": "c60c3bcfc64ea00ebf8d97b16f2876c892393839a017a945c5e557359b6369a4",
+      "sha256": "9fed960c64e249aea631c4b5d97b981b7e72c56f7a8a72443ee65f89b7869a54",
+      "duration": 14.269,
+      "trimStart": 0.0
+    },
+    {
+      "name": "strings_84_b638fc",
+      "midi": 84,
+      "url": "./assets/acoustic/strings_84_b638fc.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C6_p.wav",
+      "sourceSha256": "48039f28964328d0b8235b8d61e39b06f8d22f836a6940fa036fe7004fc58e6c",
+      "sha256": "e074d66102f55cd5dcc6a367b63aa57856959cf20f6a726ee4f8b192a9ff1518",
+      "duration": 13.372,
+      "trimStart": 0.0
+    }
+  ],
+  "flute": [
+    {
+      "name": "flute_60_454f59",
+      "midi": 72,
+      "url": "./assets/acoustic/flute_60_454f59.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_C4_v1_1.wav",
+      "sourceSha256": "af29be391cd3de946c8ff263a05f349a3c85e7298deed183339004a2ab1cad26",
+      "sha256": "45f82021c09fe5fa75759c4f4778fdc097d853c66e05461c15090c43c887c044",
+      "duration": 11.873,
+      "trimStart": 0.0002
+    },
+    {
+      "name": "flute_69_384636",
+      "midi": 81,
+      "url": "./assets/acoustic/flute_69_384636.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_A4_v1_1.wav",
+      "sourceSha256": "25f416f625f0acbf427c377f67bba01e68c514d4ea980557bc2884812f7c57f2",
+      "sha256": "e695787ad5a9e3a1e956965fff3f5b6fb3d42ff032af16e3711324bb41f2aeea",
+      "duration": 11.349,
+      "trimStart": 0.0
+    },
+    {
+      "name": "flute_72_9d8581",
+      "midi": 84,
+      "url": "./assets/acoustic/flute_72_9d8581.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_C5_v1_1.wav",
+      "sourceSha256": "7f85ac8b21270bacf48d37e39b0c59ad25b3710bf270150940a948369f30028a",
+      "sha256": "44dd7afd528256f29243eda273ec1874dec5b567e07f41eccaed1d09de4d8f2e",
+      "duration": 12.057,
+      "trimStart": 0.0
+    },
+    {
+      "name": "flute_76_efdf47",
+      "midi": 88,
+      "url": "./assets/acoustic/flute_76_efdf47.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_E5_v1_1.wav",
+      "sourceSha256": "98bb4ad4eb81f1d73ccc794622e8045ec618eccf331d71f95520b6e51c379189",
+      "sha256": "6435e58b242d9aa09d01a4aecec0901941cef1f5106a1cb980293f944b919271",
+      "duration": 10.51,
+      "trimStart": 0.009
+    },
+    {
+      "name": "flute_84_0cac19",
+      "midi": 96,
+      "url": "./assets/acoustic/flute_84_0cac19.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_C6_v1_1.wav",
+      "sourceSha256": "fdf1cab7e2e6cc7fc088fdbc77d735638fc3a314f4fcb9ccd1bfb7bcf064040c",
+      "sha256": "e8293f798f7ee726feedc36a6b90eb60960850a05132f9d3290153a856428f9c",
+      "duration": 4.121,
+      "trimStart": 0.0
+    },
+    {
+      "name": "flute_60_9fd5fe",
+      "midi": 60,
+      "tune": 0,
+      "url": "./assets/acoustic/flute_60_9fd5fe.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_C3_v1_1.wav",
+      "sourcePage": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_C3_v1_1.wav",
+      "sourceSha256": "5fde88f6ce3994f8a5c3b38d2c31e3245f2fcd563d6334e598d38bb9d6004af6",
+      "sha256": "17bec5cb9f6e92c0af4b51577af8d34b6c5009e2ff552a44509d40d8b44992bd",
+      "duration": 9.983,
+      "trimStart": 0.0
+    },
+    {
+      "name": "flute_69_e6ee80",
+      "midi": 69,
+      "tune": 0,
+      "url": "./assets/acoustic/flute_69_e6ee80.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_A3_v1_1.wav",
+      "sourcePage": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_A3_v1_1.wav",
+      "sourceSha256": "6f7566797c5ac37172189ab375d28f0068232b74f5611e16da217055d3da6420",
+      "sha256": "14f80ff24c5f1fcce4888323867062ab7f1ce2811aeff0e79cd7afd051ce58fa",
+      "duration": 10.723,
+      "trimStart": 0.0
+    },
+    {
+      "name": "flute_76_bfe727",
+      "midi": 76,
+      "tune": 0,
+      "url": "./assets/acoustic/flute_76_bfe727.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_E4_v1_1.wav",
+      "sourcePage": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/expvib/LDFlute_expvib_E4_v1_1.wav",
+      "sourceSha256": "76ddf8704b6725b0f601fd70394503a5f2dd767881a0a70e6fd90315d3d96757",
+      "sha256": "c21eca835c627290c268e3fa3ad38d7a8a51d35ce4c906586fe23732bfd4f9f4",
+      "duration": 10.834,
+      "trimStart": 0.0
+    }
+  ],
+  "harp": [
+    {
+      "name": "harp_48_226426",
+      "midi": 48,
+      "url": "./assets/acoustic/harp_48_226426.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_C3_mf.wav",
+      "sourceSha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+      "sha256": "fc8ec16fcc891d5c844c29f38c43159bec90cc12a34ef0923e4c8ac876c4d9fb",
+      "duration": 8.963,
+      "trimStart": 0.0
+    },
+    {
+      "name": "harp_55_f02573",
+      "midi": 55,
+      "url": "./assets/acoustic/harp_55_f02573.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_G3_mf.wav",
+      "sourceSha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+      "sha256": "7c63bbdba7d34e10529fcb1c3be6aaa04213c25a097972c2cfd22628899f4dbf",
+      "duration": 10.204,
+      "trimStart": 0.0384
+    },
+    {
+      "name": "harp_62_1684cd",
+      "midi": 62,
+      "url": "./assets/acoustic/harp_62_1684cd.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_D4_mf.wav",
+      "sourceSha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+      "sha256": "54c70cd159dc719491590b2315e3064ebe5964380ffd344ef654916b78e4cf05",
+      "duration": 10.894,
+      "trimStart": 0.0
+    },
+    {
+      "name": "harp_65_20493e",
+      "midi": 65,
+      "url": "./assets/acoustic/harp_65_20493e.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_F4_mf.wav",
+      "sourceSha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+      "sha256": "842668a30a04949ec6a5d93ede321eba51cfd6ecfaca3f7c6db583397377180c",
+      "duration": 10.774,
+      "trimStart": 0.0
+    },
+    {
+      "name": "harp_69_a8467e",
+      "midi": 69,
+      "url": "./assets/acoustic/harp_69_a8467e.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_A4_mf.wav",
+      "sourceSha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+      "sha256": "7756bdc13feef39cecee37c86ca8c2f433c959176e51ae9ce8ae1c7ff5b1ccf2",
+      "duration": 11.395,
+      "trimStart": 0.0006
+    },
+    {
+      "name": "harp_72_485278",
+      "midi": 72,
+      "url": "./assets/acoustic/harp_72_485278.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_C5_mf.wav",
+      "sourceSha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+      "sha256": "63552ceae01fab6bcfaaa763d7a8cc95edf63b3511b6341095ae736902481f24",
+      "duration": 7.008,
+      "trimStart": 0.0052
+    },
+    {
+      "name": "harp_79_4b6d2f",
+      "midi": 79,
+      "url": "./assets/acoustic/harp_79_4b6d2f.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_G5_mf.wav",
+      "sourceSha256": "f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540",
+      "sha256": "f1ff779ae476ec5661b3c6ae021804fbd355f087fc6cce1185975497b3bc201d",
+      "duration": 5.344,
+      "trimStart": 0.0
+    },
+    {
+      "name": "harp_86_eedc05",
+      "midi": 86,
+      "url": "./assets/acoustic/harp_86_eedc05.flac",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_D6_mf.wav",
+      "sourceSha256": "b040b61fb279efa1a9b9c60dcbd8626a37f57ffb30f3b50747a2123ee4db5bd2",
+      "sha256": "28bee5e776d7b630e70a0f77db6087bc5865805d78a62fd1d9bb8b1bc0da34b9",
+      "duration": 2.973,
+      "trimStart": 0.0
+    }
+  ],
+  "bowl": [
+    {
+      "name": "bowl_54_93c87b",
+      "midi": 54,
+      "url": "./assets/acoustic/bowl_54_93c87b.flac",
+      "source": "https://cdn.freesound.org/previews/411/411486_2154914-hq.mp3",
+      "sourceSha256": "58cc3ed0076e6a9194660c1e024aae31c47f3975b8be9beffc3f8a8f317bd3f3",
+      "sha256": "6ee27ccdf05da0b294d56e42cc9794a7897a40e2562e9d275e996108926cb616",
+      "duration": 48.684,
+      "trimStart": 0.1014,
+      "tune": 28.28
+    }
+  ],
+  "kalimba": [
+    {
+      "name": "kalimba_60_313098",
+      "midi": 60,
+      "tune": 25,
+      "url": "./assets/acoustic/kalimba_60_313098.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "8c411aee1914d1647b0394a9eab49684147df650b7f00f145575b424efddeda3",
+      "sha256": "8e6c0388f671ae3ecc9bead72051ac6966ae8357753a524f462a5d73aebc4676",
+      "duration": 3.045,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_60_600892",
+      "midi": 60,
+      "tune": 25,
+      "url": "./assets/acoustic/kalimba_60_600892.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "974d2362ce85c153c6428e5dfd59cfa144691019529a4d17d3b4b23c402a4355",
+      "sha256": "186bbdb443cf854d0d84679fd270c8bb223dfd392c9277e8f14edb7dbcd5d79b",
+      "duration": 2.46,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_63_9d5dc1",
+      "midi": 63,
+      "tune": 5,
+      "url": "./assets/acoustic/kalimba_63_9d5dc1.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "c138a13a75622050ebd288c8a82f083131ce208a57c0142e826cff711425a115",
+      "sha256": "c17154365b30462055cb477c238a90bb3dc2e9580c14f092a6709a7e1b03dc3a",
+      "duration": 2.083,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_63_531aab",
+      "midi": 63,
+      "tune": 5,
+      "url": "./assets/acoustic/kalimba_63_531aab.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "3e8aafa7e3be8d02012de419fcb297e5e6cadda86c610d1644224ce3ef8469b7",
+      "sha256": "b55c9565a3df689b561ae6bb1f22d8223d749cfabc0b2fa27f56f8e494562401",
+      "duration": 2.233,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_64_9f22ff",
+      "midi": 64,
+      "tune": -40,
+      "url": "./assets/acoustic/kalimba_64_9f22ff.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "d64df74e5dd506b0b9a82f67b05b458bcc7964d800906485022f52a0eccb2e60",
+      "sha256": "e6d8c0c8293bca6399dbdad70c1e72f8179a53789f21c33f0e449dcaaf6b71d9",
+      "duration": 2.469,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_64_d5eaeb",
+      "midi": 64,
+      "tune": -40,
+      "url": "./assets/acoustic/kalimba_64_d5eaeb.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "5927e6775ec967b99c341e7c3d2eb80138c697b8b48a1431b799dccc5b2105d9",
+      "sha256": "7dadf1e6775a5721039747f726c74d6d0b6bd230083f2bd17be45d4fe200b6d6",
+      "duration": 2.176,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_67_94cb88",
+      "midi": 67,
+      "tune": 7,
+      "url": "./assets/acoustic/kalimba_67_94cb88.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "12be72f5d8bf55a12a6654dcb124ea63b12e77a62084bc2f40ad8820a63b6db3",
+      "sha256": "6248b444365249b1bad65c66df5449c5046cc18cab244f13824b049623b73ed0",
+      "duration": 1.942,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_67_c1ed46",
+      "midi": 67,
+      "tune": 7,
+      "url": "./assets/acoustic/kalimba_67_c1ed46.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "3bd1ccb0987b95db488880dc29e177b000a6b63f5a9d181fa1304469c8a2dc68",
+      "sha256": "8a34677067db433677ba96de55063f7dd7801b4350dac55eb0fdc14ba50a597d",
+      "duration": 1.896,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_68_0f4de0",
+      "midi": 68,
+      "tune": 17,
+      "url": "./assets/acoustic/kalimba_68_0f4de0.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "1c655fe893c1b26038378c57df0f5dce26b9dd640cf09f619efbf6e61aed8123",
+      "sha256": "f0a5e3d4fca03c1ee51d81c4b61f81c579dcecb9790c9292b8d6880811e8c923",
+      "duration": 1.94,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_68_3e118a",
+      "midi": 68,
+      "tune": 17,
+      "url": "./assets/acoustic/kalimba_68_3e118a.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "43217542615e87759fb24e18b50846042340a0ab705b2d719b9fb9556786b225",
+      "sha256": "85394ec0d85d4ba2e6f5a25eac71a6355a091b6ee9feccaabcb724e753295731",
+      "duration": 1.966,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_72_e3a31e",
+      "midi": 72,
+      "tune": 22,
+      "url": "./assets/acoustic/kalimba_72_e3a31e.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "49bdf372608049680eb649ba0948ff5a2327ab8ca9d800d53199773de74948c4",
+      "sha256": "781acd4c2642090a062e49f2a22e88416836e7ec7a9c249b56f3139baf5a1313",
+      "duration": 1.924,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_72_4a6e85",
+      "midi": 72,
+      "tune": 22,
+      "url": "./assets/acoustic/kalimba_72_4a6e85.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "a56f1974d177e1ac0036b75101186dcee33326ce102cd0fb7d32d92e4a6b0821",
+      "sha256": "c7cc7021823915dda787c3c22b7f7c5d6470984c555b3db9411dc0358d6820be",
+      "duration": 1.827,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_73_91257b",
+      "midi": 73,
+      "tune": -15,
+      "url": "./assets/acoustic/kalimba_73_91257b.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "d66471421f5ebd774eae5101efbb243f8b3f0e367f29446981479c4003e38b78",
+      "sha256": "bcbe2df5515a94a39811cfc5e166750f124deca3f6e103bf47f35a978bd0d4c4",
+      "duration": 1.87,
+      "trimStart": 0.0
+    },
+    {
+      "name": "kalimba_73_0d095e",
+      "midi": 73,
+      "tune": -15,
+      "url": "./assets/acoustic/kalimba_73_0d095e.flac",
+      "source": "https://freepats.zenvoid.org/Ethnic/Kalimba/Kalimba-SFZ-20190723.tar.xz",
+      "sourcePage": "https://freepats.zenvoid.org/Ethnic/kalimba.html",
+      "sourceSha256": "626b8cba41c104a486623122059b64abc2b657eb4d8f7712a238ea08f5cc858c",
+      "sha256": "ab80f7cb0fb6d5a821702fbbc7a665fdb8f172ce2db54452b5455b8400e7645d",
+      "duration": 2.001,
+      "trimStart": 0.0
+    }
+  ],
+  "epiano": [
+    {
+      "name": "epiano_45_6ee5c3",
+      "midi": 45,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_45_6ee5c3.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_045__A2_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "b24fbab7426872969958690d0526bbcadfdea155ec1dcbf01fa58bb476f27bda",
+      "sha256": "8cfeb0b6de8a5758508d3321d38fef8a1bc592430dbe602a6c2d7e34f8b88130",
+      "duration": 19.238,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_50_8a1921",
+      "midi": 50,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_50_8a1921.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_050__D3_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "b915a0d085b4cf807197651a5afeec74403702839b0a31cdb26969f663def9a4",
+      "sha256": "ec2b752d34f918a2742e777b960a522e315eaad9b37e8f3d8a12e901c52b7b8d",
+      "duration": 13.436,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_55_55bcd2",
+      "midi": 55,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_55_55bcd2.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_055__G3_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "a84ff9da081c4db21a87a7b79f58f65acf9f9d43bb709db6b23fef5c7ccfcc73",
+      "sha256": "d8ab138278bb84f31cf0529ec549de627f7d5f86b68782ef70fdab0562c5df8f",
+      "duration": 15.576,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_59_f28820",
+      "midi": 59,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_59_f28820.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_059__B3_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "d48937d8c50f475fa3d439be6c8ddcdf77b1854fb6b8286dd9730272c553bf94",
+      "sha256": "1e7b39f220d06bf99fa52c384435900a24c790be0ba24f509cdae9c633cca440",
+      "duration": 12.378,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_62_27a898",
+      "midi": 62,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_62_27a898.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_062__D4_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "156dce96f304de710029b83661769c6a429c225e6ad394f2206fdae70f9caf09",
+      "sha256": "67db85d85b621c419476740a5565530f1db96ae58775456b7ce19427b7021e06",
+      "duration": 13.185,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_65_8c7647",
+      "midi": 65,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_65_8c7647.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_065__F4_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "5f9d5c4e5623632a7e31e4d5c9b11bdce30c3eb9d30dabf0cf3bb3d2640c6431",
+      "sha256": "8e791078409a62d9d823b7e6d8d9c9ca15cb0c462bd67bb05eb37942b917153f",
+      "duration": 12.104,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_71_dc8144",
+      "midi": 71,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_71_dc8144.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_071__B4_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "9be6df42d3a83f998f368142230ab6bc5c08dd40f6894020f53e9f01e43f06ab",
+      "sha256": "61fa0954d4cc830897ab132c943a589553927422001d7d4c4cae3ae1ad6342f0",
+      "duration": 8.957,
+      "trimStart": 0.0
+    },
+    {
+      "name": "epiano_76_84fb50",
+      "midi": 76,
+      "tune": 0,
+      "url": "./assets/acoustic/epiano_76_84fb50.flac",
+      "source": "https://raw.githubusercontent.com/sfzinstruments/jlearman.jRhodes3d/aea5b8d3e11e2f7102593789a4e0a0e41b30271a/jRhodes3d-mono/A_076__E5_1.flac",
+      "sourcePage": "https://github.com/sfzinstruments/jlearman.jRhodes3d",
+      "sourceSha256": "751204353bcb824d06ffa4a9e61ec64ad21242764d7467115267044143c4a726",
+      "sha256": "5077ac831950b621c71c26a814e5ea1733b128a4a709b1aa7a7c0b2ab79eb989",
+      "duration": 5.4,
+      "trimStart": 0.0
+    }
+  ]
+}
