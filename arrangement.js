@@ -25,6 +25,19 @@ const Arrangement = (() => {
     if (['ember', 'city'].includes(scene) && random() < .15) chosen.push('tape');
     return chosen;
   }
-  return { choose, recipes, environments };
+  function phrase(previous, response = false, random = Math.random) {
+    const pick = items => items[Math.floor(random() * items.length)];
+    const contours = [[0, 1], [0, -1, 0], [0, 1, 2], [0, 0, -1], [0, 2, 1, 0], [0, -1, -2, -1]];
+    let steps = [...(previous && (response || random() < .72) ? previous.steps : pick(contours))];
+    const variation = random();
+    if (variation < .25) steps = steps.map(step => -step);
+    else if (variation < .5) steps.reverse();
+    else if (variation < .7) steps[steps.length - 1] += pick([-1, 1]);
+    const origin = steps[0]; steps = steps.map(step => Math.max(-3, Math.min(3, step - origin)));
+    const stretch = response ? 1.15 : 1;
+    return { steps, gaps: steps.slice(1).map(() => (3.2 + random() * 2.8) * stretch),
+      levels: steps.map((_, index) => (.88 - index * .045) * (response ? .88 : 1)), response };
+  }
+  return { choose, recipes, environments, phrase };
 })();
 if (typeof module !== 'undefined') module.exports = Arrangement;

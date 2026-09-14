@@ -189,8 +189,8 @@ test('selecting more instruments widens event spacing and keeps playback bounded
   async function runMix(all) {
     const h = harness();
     h.run(`layerIds.forEach(id => $(id).checked = ${all}); $('piano').checked = true;
-      const observedMeans = [], originalDelay = MusicTheory.eventDelay;
-      MusicTheory.eventDelay = mean => { observedMeans.push(mean); return originalDelay(mean); };`);
+      const observedMeans = [], originalPlayer = phrasePlayer;
+      phrasePlayer = (name, play, mean) => { observedMeans.push(mean()); return originalPlayer(name, play, mean); };`);
     await h.run('start()'); h.advance(7);
     const means = h.run('observedMeans.slice()');
     if (all) { h.advance(3600); assert(h.run('nodes.length') < 500); assert(h.run('soundingNotes.length') < 60); }
@@ -198,7 +198,7 @@ test('selecting more instruments widens event spacing and keeps playback bounded
     return means;
   }
   const sparse = await runMix(false), full = await runMix(true);
-  assert.equal(sparse.length, 8); assert.equal(full.length, 8);
+  assert.equal(sparse.length, 6); assert.equal(full.length, 6);
   assert(Math.min(...full) > Math.min(...sparse) * 2);
 });
 
@@ -253,4 +253,68 @@ test('within-scene harmony changes preserve the current orchestration', async ()
   h.run('Math.random = () => .9; evolveHarmony()');
   assert.equal(h.run('layerIds.filter(selected).join()'), before);
   h.run('stop()'); h.advance(3);
+});
+
+test('fragments vary in contour and timing while responses retain the source shape', () => {
+  const rng = random(), shapes = new Set(), rhythms = new Set();
+  let previous;
+  for (let i = 0; i < 1000; i++) {
+    const phrase = arrangement.phrase(previous, false, rng);
+    assert(phrase.steps.length >= 2 && phrase.steps.length <= 4);
+    assert.equal(phrase.steps[0], 0);
+    assert(phrase.steps.every(step => Math.abs(step) <= 3));
+    assert(phrase.gaps.every(gap => gap >= 3.2 && gap <= 6));
+    assert(phrase.levels.every(level => level > .6 && level <= .88));
+    shapes.add(phrase.steps.join()); rhythms.add(phrase.gaps.join()); previous = phrase;
+  }
+  assert(shapes.size > 20); assert(rhythms.size > 900);
+  const source = { steps: [0, 1, 2] };
+  const answer = arrangement.phrase(source, true, () => .1);
+  assert.deepEqual(answer.steps, [0, -1, -2]);
+  assert(answer.levels[0] < .88);
+  assert.deepEqual(source.steps, [0, 1, 2]);
+});
+
+test('foreground phrases yield to a quieter response and release deselected voices', async () => {
+  const h = harness(); await h.run('start()');
+  h.run(`timers.forEach(clearTimeout); timers = [];
+    $('piano').checked = true; $('flute').checked = true; Math.random = () => .1;
+    const calls = [];
+    const lead = phrasePlayer('piano', () => calls.push({ name: 'piano', step: phraseEvent.step, level: phraseEvent.level }), () => 15);
+    const answer = phrasePlayer('flute', () => calls.push({ name: 'flute', step: phraseEvent.step, level: phraseEvent.level }), () => 15);`);
+  const gap = h.run('lead()');
+  h.run('answer()'); assert.equal(h.run('calls.length'), 1);
+  h.advance(gap); const rest = h.run('lead()');
+  assert(rest >= 30 - gap);
+  h.advance(9); h.run('answer()');
+  assert.equal(h.run('calls.at(-1).name'), 'flute');
+  assert(h.run('calls.at(-1).level < calls[0].level'));
+  h.run("$('flute').checked = false; answer()");
+  assert.equal(h.run('foreground'), null);
+  assert.equal(h.run('phraseEvent'), null);
+  h.run('stop()'); h.advance(3);
+});
+
+test('hour-long foreground generation stays sparse, in key, and stops mid-fragment', async () => {
+  const h = harness();
+  h.run(`layerIds.forEach(id => $(id).checked = true); $('auto-random').checked = false;
+    const events = [], originalNote = noteMidi;
+    noteMidi = (...args) => {
+      const midi = originalNote(...args);
+      if (phraseEvent) events.push({ at: context.currentTime, voice: args[1], midi,
+        inKey: getScale().some(value => MusicTheory.pc(value) === MusicTheory.pc(midi)) });
+      return midi;
+    };`);
+  await h.run('start()'); h.advance(3600);
+  const events = h.run('events');
+  assert(events.length > 100);
+  assert(events.every(event => event.inKey));
+  assert(new Set(events.map(event => event.voice)).size >= 4);
+  for (const voice of new Set(events.map(event => event.voice))) {
+    const notes = events.filter(event => event.voice === voice);
+    for (const note of notes) assert(notes.filter(other => other.at >= note.at && other.at < note.at + 60).length <= 8);
+  }
+  const count = events.length; h.run('stop()'); h.advance(120);
+  assert.equal(h.run('events.length'), count);
+  assert.equal(h.run('timers.length'), 0); assert.equal(h.run('nodes.length'), 0);
 });
