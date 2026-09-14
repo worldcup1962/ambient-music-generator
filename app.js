@@ -28,7 +28,6 @@ let context, master, ambience, wetGain, dryGain, output, volumeGain, isPlaying =
 const retiringArrangements = new Set();
 let sampleBuffers = {}, harmonyRevision = 0, harmony = [], soundingNotes = [];
 const voices = new Map();
-let phraseEvent = null, foreground = null, phraseMemory = null;
 const SAMPLE_URLS = {
   rain: './assets/rain.mp3', wind: './assets/wind.mp3', ocean: './assets/ocean.mp3', stream: './assets/stream.mp3',
   birds: './assets/birds.mp3', fireplace: './assets/fireplace.mp3'
@@ -86,7 +85,6 @@ function track(...members) {
   }, { once: true }));
 }
 function resetHarmony() {
-  foreground = null; phraseMemory = null;
   harmonyRevision = 0; harmony = MusicTheory.nextChord(getScale()); voices.clear(); soundingNotes = [];
 }
 function updateSpace(seconds = 3) {
@@ -124,9 +122,9 @@ function sampledTone(candidates, midi, duration, volume, attack = .008, offset =
   const t = context.currentTime + offset + gesture.delay, source = context.createBufferSource(), gain = context.createGain(), filter = context.createBiquadFilter();
   source.buffer = sampleBuffers[chosen.name];
   source.playbackRate.value = Math.pow(2, (midi - chosen.midi + (chosen.tune || 0) / 100) / 12);
-  const length = Math.min((phraseEvent ? Math.min(duration, 6) : duration) * gesture.length, source.buffer.duration / source.playbackRate.value - .02);
+  const length = Math.min(duration * gesture.length, source.buffer.duration / source.playbackRate.value - .02);
   if (length <= .1) return false;
-  const level = volume * .96 * gesture.level * (phraseEvent?.level ?? 1), release = Math.min(1.4, length * .22);
+  const level = volume * .96 * gesture.level, release = Math.min(1.4, length * .22);
   gain.gain.setValueAtTime(.0001, t); gain.gain.linearRampToValueAtTime(level, t + Math.min(attack * gesture.attack, length * .1));
   gain.gain.setValueAtTime(level, t + length - release); gain.gain.linearRampToValueAtTime(0, t + length);
   filter.type = 'lowpass'; filter.frequency.value = MusicTheory.clamp(9500 * Math.sqrt(sceneConfig().brightness) * gesture.brightness, 5000, 16000);
@@ -251,15 +249,7 @@ function noteMidi(octave, voiceName = 'piano', duration = 8) {
   if (!voices.has(voiceName)) voices.set(voiceName, { motif: [0, pick([-1, 1]), pick([0, 2]), pick([-1, 0, 1])], position: 0 });
   const voice = voices.get(voiceName), step = voice.motif[voice.position++ % voice.motif.length];
   const degree = ((performance.degree + step) % scale.length + scale.length) % scale.length;
-  let target = 12 * (octave + 1 + sceneConfig().register) + scale[degree];
-  if (phraseEvent) {
-    const notes = MusicTheory.scaleNotes(scale, 36, 108);
-    if (phraseEvent.phrase.anchor === undefined) {
-      const anchor = voice.last ?? target;
-      phraseEvent.phrase.anchor = notes.reduce((best, note, index) => Math.abs(note - anchor) < Math.abs(notes[best] - anchor) ? index : best, 0);
-    }
-    target = notes[MusicTheory.clamp(phraseEvent.phrase.anchor + phraseEvent.step, 0, notes.length - 1)];
-  }
+  const target = 12 * (octave + 1 + sceneConfig().register) + scale[degree];
   soundingNotes = soundingNotes.filter(note => note.until > now);
   const ranges = { pluck: [55, 79], shimmer: [72, 96], epiano: [48, 76], flute: [60, 88], bowl: [51, 57], kalimba: [60, 76] };
   const [low, high] = ranges[voiceName] || [48, 88];
@@ -268,7 +258,6 @@ function noteMidi(octave, voiceName = 'piano', duration = 8) {
   return midi;
 }
 function tone(type, midi, duration, volume, attack = .7, detune = 0, offset = 0, sustain = false) {
-  if (phraseEvent) { volume *= phraseEvent.level; duration = Math.min(duration, 6); }
   const t = context.currentTime + offset, osc = context.createOscillator(), gain = context.createGain(), filter = context.createBiquadFilter();
   osc.type = type; osc.frequency.value = midiToHz(midi); osc.detune.value = detune; filter.type = 'lowpass'; filter.frequency.value = (type === 'sawtooth' ? 1050 : 3800) * sceneConfig().brightness;
   gain.gain.setValueAtTime(.0001, t); gain.gain.exponentialRampToValueAtTime(volume, t + attack);
@@ -280,7 +269,7 @@ function piano() {
   if (!selected('piano')) return;
   const duration = rand(8, 12), midi = noteMidi(Math.random() < timeConfig().upper ? 4 : 3, 'piano', duration);
   sampledTone(acousticBanks.piano, midi, duration, .24);
-  if (!phraseEvent && Math.random() < sceneConfig().chordChance) {
+  if (Math.random() < sceneConfig().chordChance) {
     const companion = noteMidi(4, 'piano', duration);
     sampledTone(acousticBanks.piano, companion, duration, .12, .008, rand(.04, .12));
   }
@@ -324,7 +313,6 @@ function bowl() {
 
 function harp() {
   if (!selected('harp')) return;
-  if (phraseEvent) { sampledTone(acousticBanks.harp, noteMidi(4, 'harp', 6), 6, .17); return; }
   const duration = rand(7, 11), first = noteMidi(4, 'harp', duration), second = noteMidi(5, 'harp', duration);
   sampledTone(acousticBanks.harp, first, duration, .17);
   sampledTone(acousticBanks.harp, second, duration, .1, .008, rand(.45, .95));
@@ -374,39 +362,6 @@ function createAmbience() {
   const source = context.createBufferSource(), gain = context.createGain(), filter = context.createBiquadFilter(); source.buffer = noiseBuffer(4); source.loop = true; filter.type = 'bandpass'; filter.frequency.value = 1900; filter.Q.value = .45; gain.gain.value = selected('tape') ? .012 : .0001; source.connect(filter).connect(gain).connect(master); source.start(); track(source, gain, filter); ambience.tape = { source, gain, level: .012 };
 }
 let arrangementVersion = 0;
-function phrasePlayer(name, play, mean) {
-  let current = null, position = 0, previous = null, started = 0;
-  return () => {
-    const now = context.currentTime;
-    if (!selected(name)) {
-      current = null;
-      if (foreground?.name === name) foreground = null;
-      return undefined;
-    }
-    if (foreground && foreground.name !== name && foreground.until > now) return rand(3.1, 6.7);
-    if (!current) {
-      const response = phraseMemory && phraseMemory.name !== name && now - phraseMemory.at < 45 && Math.random() < .55;
-      current = Arrangement.phrase(response ? phraseMemory.phrase : previous, !!response);
-      position = 0; started = now;
-    }
-    // 応答を強制せず、持続音の上で一つの断片にだけ前景を譲る。
-    phraseEvent = { phrase: current, step: current.steps[position], level: current.levels[position] };
-    try { play(); } finally { phraseEvent = null; }
-    position++;
-    if (position < current.steps.length) {
-      const gap = current.gaps[position - 1] * MusicTheory.clamp(sceneConfig().speed, .85, 1.6);
-      foreground = { name, until: now + gap + 1 };
-      return gap;
-    }
-    previous = current; phraseMemory = { name, phrase: current, at: now };
-    foreground = { name, until: now + rand(4, 8) };
-    // フレーズ内の発音を増やした分だけ休み、平均密度を元の予算内に収める。
-    const budget = mean();
-    const rest = Math.max(12, current.steps.length * Math.max(budget, MusicTheory.eventDelay(budget)) - (now - started));
-    current = null;
-    return rest * rand(1, 1.3);
-  };
-}
 function schedule(fn, range, immediate = true, stochastic = false) {
   const version = arrangementVersion;
   const queue = initialDelay => {
@@ -415,7 +370,7 @@ function schedule(fn, range, immediate = true, stochastic = false) {
     const id = setTimeout(() => { timers = timers.filter(timer => timer !== id); run(); }, delay * 1000);
     timers.push(id);
   };
-  const run = () => { if (!isPlaying || version !== arrangementVersion) return; const delay = fn(); if (version === arrangementVersion) queue(typeof delay === 'number' ? delay : undefined); };
+  const run = () => { if (!isPlaying || version !== arrangementVersion) return; fn(); if (version === arrangementVersion) queue(); };
   if (typeof immediate === 'number') queue(immediate); else if (immediate) run(); else queue();
 }
 function startArrangement() {
@@ -426,22 +381,16 @@ function startArrangement() {
   };
   createAmbience();
   schedule(drone, () => [40.1, 41.7]); schedule(strings, () => [12.1, 16.3], 1.1); schedule(haze, () => [33.3, 34.9], 2.3);
-  const melodic = (name, play, low, high, initial) => {
-    const range = interval(low, high);
-    const perform = phrasePlayer(name, play, () => range()[0]);
-    schedule(perform, range, initial, true);
-  };
-  melodic('piano', piano, 8, 16, .6); melodic('flute', flute, 15, 29, 2.1); melodic('harp', harp, 10, 20, 3.7); schedule(bowl, interval(24, 43), 5.2, true);
+  schedule(piano, interval(8, 16), .6, true); schedule(flute, interval(15, 29), 2.1, true); schedule(harp, interval(10, 20), 3.7, true); schedule(bowl, interval(24, 43), 5.2, true);
   schedule(shimmer, () => interval(...sceneConfig().shimmer)(), 6.9, true);
-  melodic('pluck', pluck, 14, 26, 4.9);
-  melodic('epiano', epiano, 12, 22, 1.7); melodic('kalimba', kalimba, 18, 30, 6.1);
+  schedule(pluck, interval(14, 26), 4.9, true);
+  schedule(epiano, interval(12, 22), 1.7, true); schedule(kalimba, interval(18, 30), 6.1, true);
   schedule(evolveHarmony, () => [50, 100], false); schedule(raindrop, () => [.24, .95]);
   schedule(refreshTime, () => [30, 30], false);
   schedule(varyPerformance, () => [180, 300], false);
 }
 function retireArrangement(closeContext = false, fadeSeconds = 2) {
   arrangementVersion++; timers.forEach(clearTimeout); timers = [];
-  foreground = null; phraseMemory = null; phraseEvent = null;
   const oldMaster = master, oldNodes = nodes, oldContext = context;
   nodes = []; ambience = null; soundingNotes = []; voices.clear();
   const retiring = { master: oldMaster, nodes: oldNodes, context: oldContext };
