@@ -95,6 +95,64 @@ test('all supported scales keep chord changes and melodies in key', () => {
     }
   }
 });
+test('modal harmony visits multiple scale degrees instead of remaining on the tonic', () => {
+  const rng = random(), scale = [2, 4, 5, 7, 9, 11, 0];
+  let chord = [];
+  const roots = new Set();
+  for (let i = 0; i < 120; i++) {
+    chord = theory.nextChord(scale, chord, rng);
+    roots.add(theory.pc(chord[0]));
+  }
+  assert(roots.size >= 5);
+  assert([...roots].every(note => scale.includes(note)));
+});
+test('every scene offers distinct bounded generation profiles', () => {
+  const h = harness();
+  const sceneGenerations = h.run('sceneGenerations');
+  for (const ids of Object.values(sceneGenerations)) {
+    assert.equal(ids.length, 2);
+    assert.notEqual(ids[0], ids[1]);
+    for (const id of ids) {
+      const profile = h.run(`generationProfiles.${id}`);
+      assert(profile.interval >= .8 && profile.interval <= 1.4);
+      assert(profile.chordRate >= .7 && profile.chordRate <= 1.2);
+      assert(profile.motifs.every(motif => motif.length >= 3 && motif.length <= 5));
+      assert(profile.motifs.flat().every(step => step >= -2 && step <= 3));
+    }
+  }
+});
+test('sections keep one foreground voice and dialogue can inherit a transformed motif', () => {
+  const h = harness();
+  h.run(`['piano', 'flute', 'harp'].forEach(id => $(id).checked = true);
+    generation = generationProfiles.dialogue; isPlaying = true; beginSection();`);
+  const foreground = h.run('section.foreground');
+  assert(['piano', 'flute', 'harp'].includes(foreground));
+  assert.equal(h.run(`layerLevel('${foreground}')`), 1);
+  assert(h.run(`['piano', 'flute', 'harp'].filter(id => id !== section.foreground).every(id => [0, .42].includes(layerLevel(id)))`));
+  h.run(`phraseMemory = { voice: 'piano', motif: [0, 2, -1, 1] };`);
+  const response = h.run(`motifFor('flute')`);
+  assert.equal(response.length, 4); assert.equal(response[0], 0);
+});
+test('generation profiles provide finite, bounded space settings', () => {
+  const h = harness();
+  for (const id of h.run('Object.keys(generationProfiles)')) {
+    h.run(`generation = generationProfiles.${id};`);
+    const config = h.run('sceneConfig()');
+    assert(config.timbre >= .6 && config.timbre <= 1.2);
+    assert(config.detune >= .2 && config.detune <= 1.1);
+    assert(config.delay >= .07 && config.delay <= .16);
+    assert(config.delayTime >= .47 && config.delayTime <= 1.08);
+  }
+});
+test('a generation seed reproduces the same random sequence', () => {
+  const h = harness();
+  h.run(`setSeed('quiet-water'); const values = Array.from({ length: 12 }, random); globalThis.seedValues = values;`);
+  const first = h.run('seedValues');
+  h.run(`setSeed('quiet-water'); globalThis.seedValues = Array.from({ length: 12 }, random);`);
+  assert.deepEqual(h.run('seedValues'), first);
+  h.run(`setSeed('other-water'); globalThis.seedValues = Array.from({ length: 12 }, random);`);
+  assert.notDeepEqual(h.run('seedValues'), first);
+});
 test('melody favors connected movement and reduces exposed dissonance', () => {
   const rng = random(), scale = [0, 2, 4, 6, 7, 9, 11], chord = [48, 55, 64];
   let largeLeaps = 0, tritones = 0;
@@ -124,8 +182,8 @@ test('ten scenes, key changes, and rapid restart keep one scheduler', async () =
   h.element('root').value = 'D'; h.element('mode').value = 'phrygian'; h.handlers.get('mode:change')();
   assert(h.run('harmony.every(note => MusicTheory.pc(note) !== 4)'));
   h.element('auto-random').checked = true;
-  h.run('Math.random = () => .5; evolveHarmony()'); assert.equal(h.element('root').value, 'D');
-  h.run('Math.random = () => .1; evolveHarmony()'); assert.equal(h.run('timers.length'), 15);
+  h.run('evolveHarmony(() => .5)'); assert.equal(h.element('root').value, 'D');
+  h.run('evolveHarmony(() => .1)'); assert.equal(h.run('timers.length'), 15);
   const old = h.run('context'); h.run('stop()'); await h.run('start()'); const fresh = h.run('context');
   h.advance(6); assert(old.closed); assert(!fresh.closed); assert.equal(h.run('timers.length'), 15);
   h.run('stop()'); h.advance(6); assert.equal(h.run('nodes.length'), 0); assert.equal(h.run('timers.length'), 0);
@@ -250,7 +308,7 @@ test('within-scene harmony changes preserve the current orchestration', async ()
   const h = harness(); await h.run('start()');
   h.element('auto-random').checked = true;
   const before = h.run('layerIds.filter(selected).join()');
-  h.run('Math.random = () => .9; evolveHarmony()');
+  h.run('evolveHarmony(() => .9)');
   assert.equal(h.run('layerIds.filter(selected).join()'), before);
   h.run('stop()'); h.advance(3);
 });

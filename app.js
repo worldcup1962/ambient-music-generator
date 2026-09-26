@@ -8,25 +8,25 @@ const scenes = {
   ember: { chordChance: .16, shimmer: [18, 32] }
 };
 const sceneProfiles = {
-  still: { label: '静かな水面', root: 'G', mode: 'pentatonic', pace: 1, register: 0, speed: 1.2, wet: .48, brightness: .85, layers: ['piano', 'haze', 'stream'], description: '余白のあるピアノと小川。静かにほどける響き' },
-  forest: { label: '深い森', root: 'D', mode: 'dorian', pace: 2, register: 0, speed: 1, wet: .42, brightness: .7, layers: ['flute', 'kalimba', 'stream'], description: '木陰に響くフルートとカリンバ、小川の流れ' },
-  tide: { label: '潮の満ち引き', root: 'F', mode: 'lydian', pace: 1, register: 0, speed: 1.5, wet: .7, brightness: .65, layers: ['strings', 'haze', 'ocean'], description: '波の上をゆっくり広がる弦とパッド' },
-  ember: { label: '残り火', root: 'A', mode: 'dorian', pace: 1, register: -1, speed: 1.3, wet: .18, brightness: .45, layers: ['epiano', 'bowl', 'fireplace', 'tape'], description: '丸いエレクトリックピアノと暖炉。近く温かな響き' },
-  snow: { label: '雪原', root: 'C', mode: 'pentatonic', pace: 1, register: 1, speed: 2, wet: .82, brightness: 1.2, layers: ['shimmer', 'haze', 'wind'], description: 'まばらなガラスベルが長い余韻を残す雪の静寂' },
-  city: { label: '雨の街', root: 'E', mode: 'dorian', pace: 3, register: 0, speed: .65, wet: .22, brightness: .6, layers: ['epiano', 'rain', 'tape'], description: '雨とテープノイズに重なる、短いエレクトリックピアノ' },
-  desert: { label: '砂漠', root: 'D', mode: 'phrygian', pace: 1, register: -1, speed: 1.6, wet: .3, brightness: .5, layers: ['drone', 'flute', 'wind'], description: '低いドローンと異国的な旋律、乾いた風' },
-  stars: { label: '星空', root: 'F', mode: 'lydian', pace: 2, register: 1, speed: 1.1, wet: .9, brightness: 1.6, layers: ['kalimba', 'shimmer', 'haze'], description: 'カリンバの弾き音とベルが深い残響の中できらめく' },
-  bamboo: { label: '竹林', root: 'G', mode: 'pentatonic', pace: 2, register: 0, speed: .75, wet: .25, brightness: 1.1, layers: ['harp', 'kalimba', 'wind'], description: 'ハープと小さなカリンバ、風の通る余白' },
-  deep: { label: '海底', root: 'E', mode: 'aeolian', pace: 1, register: -1, speed: 2, wet: .85, brightness: .3, layers: ['drone', 'strings', 'ocean'], description: '暗い低音と弦の持続音に沈む、重く遅い流れ' }
+  still: { label: '静かな水面', root: 'G', mode: 'pentatonic', pace: 2, register: 0, speed: 1.2, wet: .48, brightness: .85, layers: ['piano', 'haze', 'stream'], description: '余白のあるピアノと小川。静かにほどける響き' },
+  forest: { label: '深い森', root: 'D', mode: 'dorian', pace: 3, register: 0, speed: 1, wet: .42, brightness: .7, layers: ['flute', 'kalimba', 'stream'], description: '木陰に響くフルートとカリンバ、小川の流れ' },
+  tide: { label: '潮の満ち引き', root: 'F', mode: 'lydian', pace: 2, register: 0, speed: 1.5, wet: .7, brightness: .65, layers: ['strings', 'haze', 'ocean'], description: '波の上をゆっくり広がる弦とパッド' },
+  ember: { label: '残り火', root: 'A', mode: 'dorian', pace: 2, register: -1, speed: 1.3, wet: .18, brightness: .45, layers: ['epiano', 'bowl', 'fireplace', 'tape'], description: '丸いエレクトリックピアノと暖炉。近く温かな響き' },
+  snow: { label: '雪原', root: 'C', mode: 'pentatonic', pace: 2, register: 1, speed: 2, wet: .82, brightness: 1.2, layers: ['shimmer', 'haze', 'wind'], description: 'まばらなガラスベルが長い余韻を残す雪の静寂' },
+  city: { label: '雨の街', root: 'E', mode: 'dorian', pace: 4, register: 0, speed: .65, wet: .22, brightness: .6, layers: ['epiano', 'rain', 'tape'], description: '雨とテープノイズに重なる、短いエレクトリックピアノ' },
+  desert: { label: '砂漠', root: 'D', mode: 'phrygian', pace: 2, register: -1, speed: 1.6, wet: .3, brightness: .5, layers: ['drone', 'flute', 'wind'], description: '低いドローンと異国的な旋律、乾いた風' },
+  stars: { label: '星空', root: 'F', mode: 'lydian', pace: 3, register: 1, speed: 1.1, wet: .9, brightness: 1.6, layers: ['kalimba', 'shimmer', 'haze'], description: 'カリンバの弾き音とベルが深い残響の中できらめく' },
+  bamboo: { label: '竹林', root: 'G', mode: 'pentatonic', pace: 3, register: 0, speed: .75, wet: .25, brightness: 1.1, layers: ['harp', 'kalimba', 'wind'], description: 'ハープと小さなカリンバ、風の通る余白' },
+  deep: { label: '海底', root: 'E', mode: 'aeolian', pace: 2, register: -1, speed: 2, wet: .85, brightness: .3, layers: ['drone', 'strings', 'ocean'], description: '暗い低音と弦の持続音に沈む、重く遅い流れ' }
 };
 Object.entries(sceneProfiles).forEach(([id, profile]) => {
   scenes[id] = { chordChance: .2, shimmer: [10, 23], ...scenes[id], ...profile };
 });
 modes.phrygian = [0, 1, 3, 5, 7, 8, 10];
 modes.aeolian = [0, 2, 3, 5, 7, 8, 10];
-let context, master, ambience, wetGain, dryGain, output, volumeGain, isPlaying = false, isLoading = false, timers = [], nodes = [];
+let context, master, ambience, wetGain, dryGain, output, volumeGain, delayNode, delaySend, delayDamp, isPlaying = false, isLoading = false, timers = [], nodes = [];
 const retiringArrangements = new Set();
-let sampleBuffers = {}, harmonyRevision = 0, harmony = [], soundingNotes = [];
+let sampleBuffers = {}, harmonyRevision = 0, harmony = [], soundingNotes = [], phraseMemory;
 const voices = new Map();
 const SAMPLE_URLS = {
   rain: './assets/rain.mp3', wind: './assets/wind.mp3', ocean: './assets/ocean.mp3', stream: './assets/stream.mp3',
@@ -38,8 +38,16 @@ const performers = new Map();
 const $ = id => document.getElementById(id);
 const selected = id => $(id).checked;
 const midiToHz = midi => 440 * Math.pow(2, (midi - 69) / 12);
-const rand = (min, max) => min + Math.random() * (max - min);
-const pick = values => values[Math.floor(Math.random() * values.length)];
+// UIに露出しない再生ごとのシード。乱数の入口を一つにして、偶然の変化を
+// 音高・編成・音色にまたがる一つの演奏上の個性として扱う。
+let seedStart = 1, randomState = 1;
+function hashSeed(value) { return [...String(value)].reduce((hash, char) => Math.imul(hash ^ char.charCodeAt(0), 16777619) >>> 0, 2166136261) || 1; }
+function resetRandom() { randomState = seedStart; }
+function random() { randomState = (Math.imul(randomState, 1664525) + 1013904223) >>> 0; return randomState / 4294967296; }
+function setSeed(value) { seedStart = hashSeed(value); resetRandom(); }
+function freshSeed() { return `${Date.now()}-${Math.floor(Math.random() * 1e9)}`; }
+const rand = (min, max) => min + random() * (max - min);
+const pick = values => values[Math.floor(random() * values.length)];
 const masterLevel = () => (+$('volume').value / 100) * 1;
 const timeProfiles = [
   { id: 'midnight', label: '深夜', start: 0, speed: 1.8, brightness: .55, wet: .14, chords: .55, upper: .1, description: '音数を抑え、低めの旋律と深い余韻に' },
@@ -49,7 +57,22 @@ const timeProfiles = [
   { id: 'evening', label: '夕方', start: 17, speed: 1.2, brightness: .8, wet: .05, chords: 1.05, upper: .3, description: '温かな音色と、ゆったりした旋律に' },
   { id: 'night', label: '夜', start: 21, speed: 1.5, brightness: .65, wet: .12, chords: .7, upper: .18, description: '落ち着いた低めの音と、長い余韻に' }
 ];
+// 景色を変えずに時間感覚を変えるための振る舞いの束。個々の値を独立抽選せず
+// まとめて選ぶことで、偶然性が散漫にならず一回の演奏としての一貫性を保つ。
+const generationProfiles = {
+  suspended: { label: '静止', interval: 1.35, chordRate: .72, timbre: .72, detune: .25, delay: .08, delayTime: .93, motifs: [[0, 0, 1], [0, -1, 0], [0, 1, 0, -1]], mutation: [-1, 0, 1] },
+  drifting: { label: '漂流', interval: 1.08, chordRate: 1, timbre: .9, detune: .7, delay: .12, delayTime: .71, motifs: [[0, 1, 2, 1], [0, -1, 1, 2], [0, 2, 1, -1, 0]], mutation: [-2, -1, 0, 1, 2] },
+  dialogue: { label: '応答', interval: 1.16, chordRate: .9, timbre: 1.04, detune: .4, delay: .09, delayTime: .61, motifs: [[0, 2, -1, 1], [0, -2, 1, -1], [0, 1, -1, 2, 0]], mutation: [-2, -1, 0, 1, 2] },
+  glimmer: { label: 'きらめき', interval: .88, chordRate: 1.15, timbre: 1.2, detune: 1.1, delay: .16, delayTime: .47, motifs: [[0, 2, 1, 3], [0, -1, 2, 1], [0, 1, 3, 2, 0]], mutation: [-1, 0, 1, 2, 3] },
+  lowTide: { label: 'うねり', interval: 1.25, chordRate: 1.1, timbre: .62, detune: .9, delay: .07, delayTime: 1.08, motifs: [[0, -1, -2, 0], [0, 1, -2, -1], [0, -2, 1, 0, -1]], mutation: [-2, -1, 0, 1] }
+};
+const sceneGenerations = {
+  still: ['suspended', 'drifting'], forest: ['drifting', 'dialogue'], tide: ['lowTide', 'suspended'], ember: ['suspended', 'dialogue'], snow: ['suspended', 'glimmer'],
+  city: ['dialogue', 'drifting'], desert: ['lowTide', 'dialogue'], stars: ['glimmer', 'drifting'], bamboo: ['dialogue', 'glimmer'], deep: ['lowTide', 'suspended']
+};
+let generation = generationProfiles.suspended;
 let performance = { speed: 1, brightness: 1, degree: 0 };
+let section = { signature: '', foreground: '', responder: '' };
 function timeConfig(date = new Date()) {
   const selection = $('time-style').value;
   if (selection === 'off') return { label: '時間変化なし', speed: 1, brightness: 1, wet: 0, chords: 1, upper: .28, description: '景色本来の響きで演奏' };
@@ -71,7 +94,44 @@ function refreshTime() {
 }
 function varyPerformance() {
   performance = { speed: MusicTheory.clamp(performance.speed + rand(-.025, .025), .9, 1.1), brightness: MusicTheory.clamp(performance.brightness + rand(-.02, .02), .93, 1.07), degree: pick([0, 1, 2, 4]) };
-  voices.forEach(voice => { voice.motif[Math.floor(rand(0, voice.motif.length))] = pick([-1, 0, 1, 2]); });
+  voices.forEach(voice => { voice.motif[Math.floor(rand(0, voice.motif.length))] = pick(generation.mutation); });
+  beginSection();
+  if (isPlaying) updateNowPlaying();
+}
+
+function chooseGeneration(scene = $('scene-style').value) {
+  const choices = sceneGenerations[scene] || ['suspended'];
+  generation = generationProfiles[pick(choices)];
+  return generation;
+}
+function makeMotif() {
+  const source = pick(generation.motifs);
+  // 同じ輪郭を保ったまま一箇所だけ変え、フレーズが毎回リセットされた印象を避ける。
+  return source.map((step, index) => index && random() < .3 ? step + pick(generation.mutation) : step);
+}
+function beginSection() {
+  const available = melodicLayerIds.filter(selected);
+  const foreground = pick(available) || '';
+  const responderCandidates = available.filter(name => name !== foreground);
+  // 前景を一つに絞ることで、選択済みの楽器が多くても同じ密度で鳴り続けず、
+  // 数分単位の交替と休止が生まれる。
+  section = {
+    signature: available.join(','), foreground,
+    responder: generation === generationProfiles.dialogue && random() < .6 ? pick(responderCandidates) || '' : ''
+  };
+}
+function layerLevel(name) {
+  const available = melodicLayerIds.filter(selected), signature = available.join(',');
+  // 手動でレイヤーを変更した直後は、次のセクションまで選択中の楽器を妨げない。
+  if (!isPlaying || section.signature !== signature || !available.length) return 1;
+  if (name === section.foreground) return 1;
+  if (name === section.responder) return .42;
+  return 0;
+}
+function motifFor(voiceName) {
+  if (generation !== generationProfiles.dialogue || !phraseMemory || phraseMemory.voice === voiceName) return makeMotif();
+  // 相手の断片を逆向きにして少し崩し、模倣ではなく遅い応答として受け渡す。
+  return phraseMemory.motif.slice().reverse().map((step, index) => index ? step + pick([-1, 0, 1]) : 0);
 }
 
 function track(...members) {
@@ -85,17 +145,21 @@ function track(...members) {
   }, { once: true }));
 }
 function resetHarmony() {
-  harmonyRevision = 0; harmony = MusicTheory.nextChord(getScale()); voices.clear(); soundingNotes = [];
+  harmonyRevision = 0; harmony = MusicTheory.nextChord(getScale(), [], random); voices.clear(); soundingNotes = []; phraseMemory = undefined;
 }
 function updateSpace(seconds = 3) {
-  const wet = sceneConfig().wet;
+  const config = sceneConfig(), wet = config.wet;
   wetGain.gain.setTargetAtTime(wet, context.currentTime, seconds);
   dryGain.gain.setTargetAtTime(1 - wet * .65, context.currentTime, seconds);
+  // 残響だけで景色を区別しないため、プロファイルの質感をディレイ時間と減衰域にも反映する。
+  delaySend?.gain.setTargetAtTime(config.delay, context.currentTime, seconds);
+  delayNode?.delayTime.setTargetAtTime(config.delayTime, context.currentTime, seconds);
+  delayDamp?.frequency.setTargetAtTime(1800 * config.timbre, context.currentTime, seconds);
 }
 
 function noiseBuffer(seconds = 3) {
   const b = context.createBuffer(1, context.sampleRate * seconds, context.sampleRate);
-  const d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; return b;
+  const d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = random() * 2 - 1; return b;
 }
 async function loadSamples() {
   const entries = Object.entries(SAMPLE_URLS).filter(([name]) => !sampleBuffers[name]);
@@ -117,7 +181,7 @@ function sampledTone(candidates, midi, duration, volume, attack = .008, offset =
   const key = candidates[0].name, previous = sampleTakes.get(key);
   const alternatives = nearest.filter(item => item.name !== previous);
   const chosen = pick(alternatives.length ? alternatives : nearest); sampleTakes.set(key, chosen.name);
-  if (!performers.has(key)) performers.set(key, MusicTheory.performer());
+  if (!performers.has(key)) performers.set(key, MusicTheory.performer(random));
   const gesture = performers.get(key)();
   const t = context.currentTime + offset + gesture.delay, source = context.createBufferSource(), gain = context.createGain(), filter = context.createBiquadFilter();
   source.buffer = sampleBuffers[chosen.name];
@@ -127,7 +191,7 @@ function sampledTone(candidates, midi, duration, volume, attack = .008, offset =
   const level = volume * .96 * gesture.level, release = Math.min(1.4, length * .22);
   gain.gain.setValueAtTime(.0001, t); gain.gain.linearRampToValueAtTime(level, t + Math.min(attack * gesture.attack, length * .1));
   gain.gain.setValueAtTime(level, t + length - release); gain.gain.linearRampToValueAtTime(0, t + length);
-  filter.type = 'lowpass'; filter.frequency.value = MusicTheory.clamp(9500 * Math.sqrt(sceneConfig().brightness) * gesture.brightness, 5000, 16000);
+  filter.type = 'lowpass'; filter.frequency.value = MusicTheory.clamp(9500 * Math.sqrt(sceneConfig().brightness) * sceneConfig().timbre * gesture.brightness, 3800, 16000);
   source.connect(filter).connect(gain).connect(master); source.start(t); source.stop(t + length + .02); track(source, gain, filter); return true;
 }
 
@@ -142,19 +206,21 @@ function makeAudio() {
   volumeGain = context.createGain(); volumeGain.gain.value = masterLevel(); volumeGain.connect(compressor).connect(context.destination);
   const convolver = context.createConvolver(); convolver.buffer = impulse(); wetGain = context.createGain(); wetGain.gain.value = sceneConfig().wet;
   dryGain = context.createGain(); dryGain.gain.value = 1 - sceneConfig().wet * .65;
-  const delay = context.createDelay(2), feedback = context.createGain(), damp = context.createBiquadFilter(), send = context.createGain();
-  delay.delayTime.value = .79; feedback.gain.value = .35; send.gain.value = .12; damp.type = 'lowpass'; damp.frequency.value = 1800;
-  delay.connect(damp).connect(feedback).connect(delay); damp.connect(convolver);
-  output = context.createGain(); output.connect(dryGain).connect(volumeGain); output.connect(convolver).connect(wetGain).connect(volumeGain); output.connect(send).connect(delay); master.connect(output);
+  delayNode = context.createDelay(2); const feedback = context.createGain(); delayDamp = context.createBiquadFilter(); delaySend = context.createGain();
+  delayNode.delayTime.value = sceneConfig().delayTime; feedback.gain.value = .35; delaySend.gain.value = sceneConfig().delay; delayDamp.type = 'lowpass'; delayDamp.frequency.value = 1800 * sceneConfig().timbre;
+  delayNode.connect(delayDamp).connect(feedback).connect(delayNode); delayDamp.connect(convolver);
+  output = context.createGain(); output.connect(dryGain).connect(volumeGain); output.connect(convolver).connect(wetGain).connect(volumeGain); output.connect(delaySend).connect(delayNode); master.connect(output);
 }
-function impulse() { const b = context.createBuffer(2, context.sampleRate * 7, context.sampleRate); for (let c = 0; c < 2; c++) { let d = b.getChannelData(c); for (let i=0;i<d.length;i++) d[i] = (Math.random()*2-1)*Math.pow(1-i/d.length, 2.35); } return b; }
+function impulse() { const b = context.createBuffer(2, context.sampleRate * 7, context.sampleRate); for (let c = 0; c < 2; c++) { let d = b.getChannelData(c); for (let i=0;i<d.length;i++) d[i] = (random()*2-1)*Math.pow(1-i/d.length, 2.35); } return b; }
 function sceneConfig() {
   const scene = scenes[$('scene-style').value], time = timeConfig();
   return { ...scene, speed: scene.speed * time.speed * performance.speed, brightness: scene.brightness * time.brightness * performance.brightness,
-    wet: Math.max(.05, Math.min(.95, scene.wet + time.wet)), chordChance: Math.min(.8, scene.chordChance * time.chords) };
+    wet: Math.max(.05, Math.min(.95, scene.wet + time.wet)), chordChance: Math.min(.8, scene.chordChance * time.chords),
+    interval: generation.interval, chordRate: generation.chordRate, timbre: generation.timbre,
+    detune: generation.detune, delay: generation.delay, delayTime: generation.delayTime };
 }
 function getScale() { const root = roots[$('root').value]; return modes[$('mode').value].map(x => root + x); }
-function updateNowPlaying() { $('now-playing').textContent = `${$('root').value} ${$('mode').value} · ${$('scene-style').selectedOptions[0].textContent} · ${timeConfig().label}`; }
+function updateNowPlaying() { $('now-playing').textContent = `${$('root').value} ${$('mode').value} · ${$('scene-style').selectedOptions[0].textContent} · ${generation.label} · ${timeConfig().label}`; }
 let visualFrame, visualHash;
 function drawAbstract(hash) {
   const canvas = $('art-canvas'), bounds = canvas.getBoundingClientRect(), scale = window.devicePixelRatio || 1;
@@ -220,20 +286,21 @@ function randomizeLandscape() {
     const common = scale.filter(note => previousScale.includes(note)).length;
     const sharedLayers = scene.layers.filter(layer => selected(layer)).length;
     return (1 + common ** 3) * (1 + sharedLayers * .25) * MusicTheory.tension(roots[scene.root], roots[$('root').value]);
-  });
+  }, random);
   applyScene({ smooth: true });
 }
 function randomizeLayers(update = true, automatic = false) {
-  const recipe = automatic ? Arrangement.choose($('scene-style').value, layerIds.filter(selected)) : sceneConfig().layers;
+  const recipe = automatic ? Arrangement.choose($('scene-style').value, layerIds.filter(selected), random) : sceneConfig().layers;
   layerIds.forEach(name => { $(name).checked = recipe.includes(name); });
   if (update) updateAmbience();
 }
 function applyScene({ smooth = false } = {}) {
   const previousHarmony = harmony, previousVoices = new Map(voices), previousNotes = soundingNotes;
+  chooseGeneration();
   const config = sceneConfig();
   $('root').value = config.root; $('mode').value = config.mode; $('pace').value = config.pace; harmonyRevision = 0;
   resetHarmony();
-  if (smooth) harmony = MusicTheory.nextChord(getScale(), previousHarmony);
+  if (smooth) harmony = MusicTheory.nextChord(getScale(), previousHarmony, random);
   randomizeLayers(!isPlaying, smooth); updatePaceOutput(); updateVisual();
   if (isPlaying) {
     restartArrangement(smooth ? 14 : 2);
@@ -246,32 +313,34 @@ function applyScene({ smooth = false } = {}) {
 }
 function noteMidi(octave, voiceName = 'piano', duration = 8) {
   const scale = getScale(), now = context.currentTime;
-  if (!voices.has(voiceName)) voices.set(voiceName, { motif: [0, pick([-1, 1]), pick([0, 2]), pick([-1, 0, 1])], position: 0 });
+  if (!voices.has(voiceName)) voices.set(voiceName, { motif: motifFor(voiceName), position: 0 });
   const voice = voices.get(voiceName), step = voice.motif[voice.position++ % voice.motif.length];
   const degree = ((performance.degree + step) % scale.length + scale.length) % scale.length;
   const target = 12 * (octave + 1 + sceneConfig().register) + scale[degree];
   soundingNotes = soundingNotes.filter(note => note.until > now);
   const ranges = { pluck: [55, 79], shimmer: [72, 96], epiano: [48, 76], flute: [60, 88], bowl: [51, 57], kalimba: [60, 76] };
   const [low, high] = ranges[voiceName] || [48, 88];
-  const midi = MusicTheory.melody({ scale, chord: harmony, target, previous: voice.last, sounding: soundingNotes.map(note => note.midi), low, high, playable: note => !acousticBanks[voiceName] || acousticBanks[voiceName].some(sample => Math.abs(sample.midi - note) <= 3) });
+  const midi = MusicTheory.melody({ scale, chord: harmony, target, previous: voice.last, sounding: soundingNotes.map(note => note.midi), low, high, playable: note => !acousticBanks[voiceName] || acousticBanks[voiceName].some(sample => Math.abs(sample.midi - note) <= 3) }, random);
   voice.last = midi; soundingNotes.push({ midi, until: now + duration + 3 });
+  if (voice.position % voice.motif.length === 0) phraseMemory = { voice: voiceName, motif: [...voice.motif] };
   return midi;
 }
 function tone(type, midi, duration, volume, attack = .7, detune = 0, offset = 0, sustain = false) {
   const t = context.currentTime + offset, osc = context.createOscillator(), gain = context.createGain(), filter = context.createBiquadFilter();
-  osc.type = type; osc.frequency.value = midiToHz(midi); osc.detune.value = detune; filter.type = 'lowpass'; filter.frequency.value = (type === 'sawtooth' ? 1050 : 3800) * sceneConfig().brightness;
+  const config = sceneConfig();
+  osc.type = type; osc.frequency.value = midiToHz(midi); osc.detune.value = detune + rand(-config.detune, config.detune); filter.type = 'lowpass'; filter.frequency.value = (type === 'sawtooth' ? 1050 : 3800) * config.brightness * config.timbre;
   gain.gain.setValueAtTime(.0001, t); gain.gain.exponentialRampToValueAtTime(volume, t + attack);
   if (sustain) gain.gain.linearRampToValueAtTime(volume * .85, t + duration - 8);
   gain.gain.exponentialRampToValueAtTime(.0001, t + duration);
   osc.connect(filter).connect(gain).connect(master); osc.start(t); osc.stop(t + duration + .1); track(osc, gain, filter);
 }
 function piano() {
-  if (!selected('piano')) return;
-  const duration = rand(8, 12), midi = noteMidi(Math.random() < timeConfig().upper ? 4 : 3, 'piano', duration);
-  sampledTone(acousticBanks.piano, midi, duration, .24);
-  if (Math.random() < sceneConfig().chordChance) {
+  const level = layerLevel('piano'); if (!selected('piano') || !level) return;
+  const duration = rand(8, 12), midi = noteMidi(random() < timeConfig().upper ? 4 : 3, 'piano', duration);
+  sampledTone(acousticBanks.piano, midi, duration, .24 * level);
+  if (random() < sceneConfig().chordChance) {
     const companion = noteMidi(4, 'piano', duration);
-    sampledTone(acousticBanks.piano, companion, duration, .12, .008, rand(.04, .12));
+    sampledTone(acousticBanks.piano, companion, duration, .12 * level, .008, rand(.04, .12));
   }
 }
 
@@ -294,28 +363,28 @@ function drone() {
   tone('sine', root + 7, duration, .035, 5, 0, 0, true);
 }
 function flute() {
-  if (!selected('flute')) return;
-  const duration = rand(5, 9), midi = noteMidi(Math.random() < timeConfig().upper ? 5 : 4, 'flute', duration);
-  sampledTone(acousticBanks.flute, midi, duration, .12, .035);
+  const level = layerLevel('flute'); if (!selected('flute') || !level) return;
+  const duration = rand(5, 9), midi = noteMidi(random() < timeConfig().upper ? 5 : 4, 'flute', duration);
+  sampledTone(acousticBanks.flute, midi, duration, .12 * level, .035);
 }
 
 function raindrop() { if (!isPlaying || !selected('rain')) return; const t=context.currentTime, source=context.createBufferSource(), g=context.createGain(), f=context.createBiquadFilter(); source.buffer=noiseBuffer(.08); f.type='bandpass';f.frequency.value=rand(1800,5200);f.Q.value=4;g.gain.setValueAtTime(rand(.006,.022),t);g.gain.exponentialRampToValueAtTime(.0001,t+.07);source.connect(f).connect(g).connect(master);source.start(t);source.stop(t+.1);track(source,g,f); }
 function shimmer() {
-  if (!selected('shimmer')) return;
-  const midi = noteMidi(Math.random() < timeConfig().upper ? 6 : 5, 'shimmer', 11), duration = rand(5, 11), t = context.currentTime;
-  [1, 2.76, 4.18].forEach((ratio, index) => { const osc=context.createOscillator(), gain=context.createGain(); osc.type='sine'; osc.frequency.value=midiToHz(midi) * ratio; gain.gain.setValueAtTime(.0001,t); gain.gain.linearRampToValueAtTime(.012/(index+1),t+.03); gain.gain.exponentialRampToValueAtTime(.0001,t+duration); osc.connect(gain).connect(master); osc.start(t); osc.stop(t+duration+.1); track(osc,gain); });
+  const level = layerLevel('shimmer'); if (!selected('shimmer') || !level) return;
+  const midi = noteMidi(random() < timeConfig().upper ? 6 : 5, 'shimmer', 11), duration = rand(5, 11), t = context.currentTime;
+  [1, 2.76, 4.18].forEach((ratio, index) => { const osc=context.createOscillator(), gain=context.createGain(); osc.type='sine'; osc.frequency.value=midiToHz(midi) * ratio; gain.gain.setValueAtTime(.0001,t); gain.gain.linearRampToValueAtTime(.012 * level/(index+1),t+.03); gain.gain.exponentialRampToValueAtTime(.0001,t+duration); osc.connect(gain).connect(master); osc.start(t); osc.stop(t+duration+.1); track(osc,gain); });
 }
 function bowl() {
-  if (!selected('bowl')) return;
+  const level = layerLevel('bowl'); if (!selected('bowl') || !level) return;
   const duration = rand(16, 23), midi = noteMidi(3, 'bowl', duration);
-  sampledTone(acousticBanks.bowl, midi, duration, .09, .015);
+  sampledTone(acousticBanks.bowl, midi, duration, .09 * level, .015);
 }
 
 function harp() {
-  if (!selected('harp')) return;
+  const level = layerLevel('harp'); if (!selected('harp') || !level) return;
   const duration = rand(7, 11), first = noteMidi(4, 'harp', duration), second = noteMidi(5, 'harp', duration);
-  sampledTone(acousticBanks.harp, first, duration, .17);
-  sampledTone(acousticBanks.harp, second, duration, .1, .008, rand(.45, .95));
+  sampledTone(acousticBanks.harp, first, duration, .17 * level);
+  sampledTone(acousticBanks.harp, second, duration, .1 * level, .008, rand(.45, .95));
 }
 
 function haze() {
@@ -324,32 +393,32 @@ function haze() {
   harmony.forEach((midi, index) => { soundingNotes.push({ midi, until: context.currentTime + duration + 3 }); tone(index === 1 ? 'triangle' : 'sine', midi, duration, .023 - index * .004, 6, rand(-4, 4), 0, true); });
 }
 function pluck() {
-  if (!selected('pluck')) return;
-  if (!performers.has('pluck')) performers.set('pluck', MusicTheory.performer());
+  const level = layerLevel('pluck'); if (!selected('pluck') || !level) return;
+  if (!performers.has('pluck')) performers.set('pluck', MusicTheory.performer(random));
   const gesture = performers.get('pluck')();
   const duration = rand(3.5, 5.5) * gesture.length;
   const midi = noteMidi(4, 'pluck', duration);
-  tone('sine', midi, duration, .075 * gesture.level, .018 * gesture.attack, 0, gesture.delay);
-  tone('sine', midi + 12, .65, .012 * gesture.level, .012, 0, gesture.delay);
+  tone('sine', midi, duration, .075 * level * gesture.level, .018 * gesture.attack, 0, gesture.delay);
+  tone('sine', midi + 12, .65, .012 * level * gesture.level, .012, 0, gesture.delay);
 }
 
 function epiano() {
-  if (!selected('epiano')) return;
+  const level = layerLevel('epiano'); if (!selected('epiano') || !level) return;
   const duration = rand(7, 11), midi = noteMidi(4, 'epiano', duration);
-  sampledTone(acousticBanks.epiano, midi, duration, .2);
+  sampledTone(acousticBanks.epiano, midi, duration, .2 * level);
 }
 
 
 function kalimba() {
-  if (!selected('kalimba')) return;
+  const level = layerLevel('kalimba'); if (!selected('kalimba') || !level) return;
   const duration = rand(4, 7), midi = noteMidi(5, 'kalimba', duration);
-  sampledTone(acousticBanks.kalimba, midi, duration, .14, .004);
+  sampledTone(acousticBanks.kalimba, midi, duration, .14 * level, .004);
 }
 
-function evolveHarmony() {
+function evolveHarmony(source = random) {
   if (!selected('auto-random')) return;
-  if (Math.random() < .38) { randomizeLandscape(); return; }
-  harmony = MusicTheory.nextChord(getScale(), harmony); harmonyRevision++;
+  if (source() < .38) { randomizeLandscape(); return; }
+  harmony = MusicTheory.nextChord(getScale(), harmony, source); harmonyRevision++;
   updateVisual();
   // 同じ景色の和声変化では編成を維持し、曲の途中で楽器を抜き差ししない。
   if (isPlaying) updateNowPlaying();
@@ -366,7 +435,7 @@ function schedule(fn, range, immediate = true, stochastic = false) {
   const version = arrangementVersion;
   const queue = initialDelay => {
     const [low, high] = range();
-    const delay = initialDelay ?? (stochastic ? MusicTheory.eventDelay((low + high) / 2) : rand(low, high));
+    const delay = initialDelay ?? (stochastic ? MusicTheory.eventDelay((low + high) / 2, random) : rand(low, high));
     const id = setTimeout(() => { timers = timers.filter(timer => timer !== id); run(); }, delay * 1000);
     timers.push(id);
   };
@@ -376,16 +445,17 @@ function schedule(fn, range, immediate = true, stochastic = false) {
 function startArrangement() {
   const interval = (low, high) => () => {
     const spacing = Math.max(1, melodicLayerIds.filter(selected).length / 3);
-    const mean = MusicTheory.clamp((low + high) / 2 * sceneConfig().speed / Math.sqrt(+$('pace').value), 10, 60) * spacing;
+    const mean = MusicTheory.clamp((low + high) / 2 * sceneConfig().speed * sceneConfig().interval / Math.sqrt(+$('pace').value), 10, 60) * spacing;
     return [mean, mean];
   };
+  beginSection();
   createAmbience();
   schedule(drone, () => [40.1, 41.7]); schedule(strings, () => [12.1, 16.3], 1.1); schedule(haze, () => [33.3, 34.9], 2.3);
   schedule(piano, interval(8, 16), .6, true); schedule(flute, interval(15, 29), 2.1, true); schedule(harp, interval(10, 20), 3.7, true); schedule(bowl, interval(24, 43), 5.2, true);
   schedule(shimmer, () => interval(...sceneConfig().shimmer)(), 6.9, true);
   schedule(pluck, interval(14, 26), 4.9, true);
   schedule(epiano, interval(12, 22), 1.7, true); schedule(kalimba, interval(18, 30), 6.1, true);
-  schedule(evolveHarmony, () => [50, 100], false); schedule(raindrop, () => [.24, .95]);
+  schedule(evolveHarmony, () => [50, 100].map(value => value / sceneConfig().chordRate), false); schedule(raindrop, () => [.24, .95]);
   schedule(refreshTime, () => [30, 30], false);
   schedule(varyPerformance, () => [180, 300], false);
 }
@@ -419,7 +489,8 @@ function restartArrangement(fadeSeconds = 2) {
 function updateAmbience() { if(!ambience || !context)return; Object.entries(ambience).forEach(([name, layer]) => layer.gain.gain.setTargetAtTime(selected(name) ? layer.level : .0001, context.currentTime, .5)); }
 async function start() {
   if (isLoading) return; isLoading = true; $('play-label').textContent = '読み込み中'; $('play-button').disabled = true;
-  varyPerformance(); resetHarmony(); refreshTime();
+  setSeed(freshSeed()); performers.clear(); sampleTakes.clear();
+  chooseGeneration(); varyPerformance(); resetHarmony(); refreshTime();
   if(!context)makeAudio(); await context.resume(); await loadSamples(); isPlaying=true; isLoading = false; $('play-button').disabled = false;
   master.gain.setValueAtTime(.0001, context.currentTime); master.gain.exponentialRampToValueAtTime(1, context.currentTime + 3);
   $('play-button').classList.add('playing');$('play-label').textContent='とめる';$('status-dot').parentElement.classList.add('playing');$('status-text').textContent='生成中';updateNowPlaying();startArrangement();
@@ -427,7 +498,7 @@ async function start() {
 function stop() { isPlaying=false; retireArrangement(true); context=null; master=null; $('play-button').classList.remove('playing');$('play-label').textContent='はじめる';$('status-dot').parentElement.classList.remove('playing');$('status-text').textContent='待機中';$('now-playing').textContent='音が始まるのを待っています'; }
 $('play-button').addEventListener('click',()=>isPlaying?stop():start());
 const disableAutoRandom = () => { $('auto-random').checked = false; };
-const updatePaceOutput = () => { $('pace-output').textContent = ['静寂','穏やか','漂流'][$('pace').value - 1]; };
+const updatePaceOutput = () => { $('pace-output').textContent = { 2: '静寂', 3: '穏やか', 4: '漂流' }[$('pace').value] || '静寂'; };
 const melodicLayerIds = ['piano','flute','harp','shimmer','bowl','epiano','kalimba','pluck'];
 const layerIds = ['piano','strings','drone','flute','harp','rain','wind','ocean','stream','birds','fireplace','shimmer','bowl','haze','tape','epiano','kalimba','pluck'];
 layerIds.forEach(id=>$(id).addEventListener('change', () => { disableAutoRandom(); updateAmbience(); updateVisual(); }));
@@ -438,6 +509,7 @@ $('time-style').addEventListener('change', refreshTime);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshTime(); });
 ['root','mode'].forEach(id => $(id).addEventListener('change', () => { disableAutoRandom(); resetHarmony(); updateVisual(); if (isPlaying) { restartArrangement(); updateNowPlaying(); } }));
 Object.entries(scenes).forEach(([id, config]) => { const option = document.createElement('option'); option.value = id; option.textContent = config.label; $('scene-style').append(option); });
+setSeed(freshSeed());
 applyScene();
 refreshTime();
 window.addEventListener('resize', updateVisual);

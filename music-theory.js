@@ -18,10 +18,18 @@ const MusicTheory = (() => {
     return 1;
   }
   function nextChord(scale, previous = [], random = Math.random) {
-    const root = 48 + pc(scale[0]);
-    const templates = [[0, 4, 7], [0, 3, 7], [0, 2, 7], [0, 5, 7], [0, 4, 9], [0, 7, 9], [0, 3, 10], [0, 5, 9]];
-    const chords = templates.filter(chord => chord.every(step => scale.some(note => pc(note) === pc(root + step))))
-      .map(chord => [root, root + chord[1], root + chord[2] + 12]);
+    // モード内の各度数を根にできるようにし、主音だけに響きが収束しないようにする。
+    // 開いた配置を使うため、遅い変化でも和声の輪郭が聴き取れる。
+    const rootPc = pc(scale[0]);
+    const degrees = scale.map(note => {
+      const value = pc(note);
+      return value < rootPc ? value + 12 : value;
+    });
+    const shapes = [[0, 2, 4], [0, 2, 5], [0, 3, 5], [0, 3, 6]];
+    const chords = degrees.flatMap((_, degree) => shapes.map(shape => shape.map(step => {
+      const index = degree + step;
+      return 48 + degrees[index % degrees.length] + 12 * Math.floor(index / degrees.length);
+    })));
     const alternatives = chords.filter(chord => chord.some((note, index) => note !== previous[index]));
     // 共通音と小さな移動を優先し、特定の終止先は設けない。
     return weighted(alternatives.length ? alternatives : chords, chord => 1 / (1 + chord.reduce((sum, note, index) => sum + Math.abs(note - (previous[index] ?? note)), 0)), random);
